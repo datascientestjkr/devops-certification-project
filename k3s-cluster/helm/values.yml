@@ -1,0 +1,63 @@
+database:
+  host: 51.158.200.13
+  port: 5432
+  name: catalogue-db
+  namespace: craftista
+  user: ZGV2b3Bz
+  password: ZGV2b3Bz
+
+catalogue:
+  name: catalogue
+  namespace: craftista
+  replicaCount: 1
+  image:
+    repository: datascientestjkr/devops-certification-project-catalogue
+    tag: latest
+  service:
+    port: 5000
+    type: ClusterIP
+  database:
+    name: catalogue-db
+
+
+frontend:
+  name: frontend
+  namespace: craftista
+  replicaCount: 1
+  image:
+    repository: datascientestjkr/devops-certification-project-frontend
+    tag: latest
+  service:
+    port: 3000
+    type: ClusterIP
+
+reccommendation:
+  name: recco
+  namespace: craftista
+  replicaCount: 1
+  image:
+    repository: datascientestjkr/devops-certification-project-recco
+    tag: latest
+  service:
+    port: 8080
+    type: ClusterIP
+
+
+voting:
+  name: voting
+  namespace: craftista
+  replicaCount: 1
+  image:
+    repository: datascientestjkr/devops-certification-project-voting
+    tag: latest
+  service:
+    port: 8080
+    type: ClusterIP
+
+ingress:
+  name: crafista-ingress
+  namespace: craftista
+  tlsSecretName: crafista-tls
+  host: devopsproject.ddns.net
+  serviceName: frontend
+  servicePort: 443
