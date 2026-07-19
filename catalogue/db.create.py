@@ -2,10 +2,10 @@ import os
 import psycopg2
 
 conn = psycopg2.connect(
-        host="cataloguedb.xxxxxxx.rds.amazonaws.com",
+        host="51.158.200.13", #VM3
         database="catalogue",
         user="devops",
-        password="xxxxxx")
+        password="devops")
 
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS products;')
