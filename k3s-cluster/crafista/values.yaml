@@ -3,8 +3,8 @@ database:
   port: 5432
   name: catalogue-db
   namespace: craftista
-  user: ZGV2b3Bz
-  password: ZGV2b3Bz
+  user: devops
+  password: devops
 
 catalogue:
   name: catalogue
