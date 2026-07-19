@@ -2,7 +2,7 @@ import os
 import psycopg2
 
 conn = psycopg2.connect(
-        host="51.158.200.13", #VM3
+        host="127.0.0.1", #VM3
         database="catalogue",
         user="devops",
         password="devops")
