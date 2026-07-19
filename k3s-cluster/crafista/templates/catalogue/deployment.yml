@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.catalogue.Name }}
-  namespace: {{ .Values.catalogue.Name }}
+  name: {{ .Values.catalogue.name }}
+  namespace: {{ .Values.catalogue.name }}
   labels:
-    app: {{ .Values.catalogue.Name }}
+    app: {{ .Values.catalogue.name }}
 spec:
   replicas: {{ .Values.catalogue.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.catalogue.Name }}
+      app: {{ .Values.catalogue.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.catalogue.Name }}
+        app: {{ .Values.catalogue.name }}
     spec:
       containers:
-      - name: {{ .Values.catalogue.Name }}
+      - name: {{ .Values.catalogue.name }}
         image: "{{ .Values.catalogue.image.repository }}:{{ .Values.catalogue.image.tag }}"
         ports:
         - containerPort: {{ .Values.catalogue.service.port }}
