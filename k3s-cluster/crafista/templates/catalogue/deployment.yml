@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
-  namespace: {{ .Release.Name }}
+  name: {{ .Values.catalogue.Name }}
+  namespace: {{ .Values.catalogue.Name }}
   labels:
-    app: {{ .Release.Name }}
+    app: {{ .Values.catalogue.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.catalogue.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ .Values.catalogue.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: {{ .Values.catalogue.Name }}
     spec:
       containers:
-      - name: {{ .Release.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      - name: {{ .Values.catalogue.Name }}
+        image: "{{ .Values.catalogue.image.repository }}:{{ .Values.catalogue.image.tag }}"
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - containerPort: {{ .Values.catalogue.service.port }}
   env:
     - name: DB_HOST
       valueFrom:

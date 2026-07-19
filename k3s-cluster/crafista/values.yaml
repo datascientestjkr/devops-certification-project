@@ -31,7 +31,7 @@ frontend:
     port: 3000
     type: ClusterIP
 
-reccommendation:
+recco:
   name: recco
   namespace: craftista
   replicaCount: 1
@@ -60,4 +60,4 @@ ingress:
   tlsSecretName: crafista-tls
   host: devopsproject.ddns.net
   serviceName: frontend
-  servicePort: 443
+  servicePort: 3000
