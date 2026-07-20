@@ -2,13 +2,13 @@ database:
   host: 51.158.200.13
   port: 5432
   name: catalogue-db
-  namespace: craftista
+  namespace: crafista
   user: devops
   password: devops
 
 catalogue:
   name: catalogue
-  namespace: craftista
+  namespace: crafista
   replicaCount: 1
   image:
     repository: datascientestjkr/devops-certification-project-catalogue
@@ -22,7 +22,7 @@ catalogue:
 
 frontend:
   name: frontend
-  namespace: craftista
+  namespace: crafista
   replicaCount: 1
   image:
     repository: datascientestjkr/devops-certification-project-frontend
@@ -33,7 +33,7 @@ frontend:
 
 recco:
   name: recco
-  namespace: craftista
+  namespace: crafista
   replicaCount: 1
   image:
     repository: datascientestjkr/devops-certification-project-recco
@@ -45,7 +45,7 @@ recco:
 
 voting:
   name: voting
-  namespace: craftista
+  namespace: crafista
   replicaCount: 1
   image:
     repository: datascientestjkr/devops-certification-project-voting
@@ -56,7 +56,7 @@ voting:
 
 ingress:
   name: crafista-ingress
-  namespace: craftista
+  namespace: crafista
   tlsSecretName: crafista-tls
   host: devopsproject.ddns.net
   serviceName: frontend
