@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.voting.name }}
-  namespace: {{ .Values.voting.name }}
+  namespace: {{ .Values.voting.namespace}}
   labels:
     app: {{ .Values.voting.name }}
 spec:

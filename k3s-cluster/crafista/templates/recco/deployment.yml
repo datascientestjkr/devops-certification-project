@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.recco.name }}
-  namespace: {{ .Values.recco.name }}
+  namespace: {{ .Values.recco.namespace }}
   labels:
     app: {{ .Values.recco.name }}
 spec:
